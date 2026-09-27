@@ -199,7 +199,7 @@ Generative AI
 AI Agents
      ↓
 Building Practical AI Products
-
+```
 
 # 🐍 GitHub Contribution Activity
 <p align="center">
