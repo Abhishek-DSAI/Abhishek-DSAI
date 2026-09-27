@@ -9,8 +9,11 @@ jobs:
   generate:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
-      - name: Generate GitHub Snake
+      - name: Generate Snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Abhishek-DSAI
@@ -18,10 +21,8 @@ jobs:
             output/github-snake.svg
             output/github-snake-dark.svg?palette=github-dark
 
-      - name: Publish Snake
-        uses: crazy-max/ghaction-github-pages@v4
+      - name: Deploy Snake
+        uses: EndBug/add-and-commit@v9
         with:
-          build_dir: output
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BUILD_DIR: output
+          add: "output"
+          message: "Update GitHub contribution snake"
