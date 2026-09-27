@@ -7,22 +7,25 @@ on:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      - name: Generate Snake
+      - name: Generate snake animation
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Abhishek-DSAI
           outputs: |
-            output/github-snake.svg
-            output/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Deploy Snake
-        uses: EndBug/add-and-commit@v9
+      - name: Push snake to output branch
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          add: "output"
-          message: "Update GitHub contribution snake"
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
