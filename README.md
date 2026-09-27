@@ -199,3 +199,14 @@ Generative AI
 AI Agents
      ↓
 Building Practical AI Products
+
+---
+
+# 🐍 GitHub Contribution Activity
+
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/Abhishek-DSAI/Abhishek-DSAI/output/github-snake.svg"
+    alt="GitHub Contribution Snake"
+  />
+</p>
